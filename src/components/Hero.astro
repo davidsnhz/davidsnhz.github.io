@@ -1,0 +1,123 @@
+---
+import type { ImageMetadata } from 'astro';
+import Icon from './Icon.astro';
+import PhoneFrame from './PhoneFrame.astro';
+import { site } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  /** Capturas para el abanico: [centro, izquierda, derecha] */
+  phones: [ImageMetadata, ImageMetadata, ImageMetadata];
+}
+
+const { lang, phones } = Astro.props;
+const [center, left, right] = phones;
+const t = useTranslations(lang);
+---
+
+<section class="mx-auto grid max-w-6xl items-center gap-14 px-5 pt-12 pb-16 sm:px-8 lg:grid-cols-[1.3fr_1fr] lg:gap-10 lg:pt-20 lg:pb-20">
+  <div>
+    <p class="flex flex-wrap items-center gap-x-3 gap-y-2">
+      <span class="font-display text-xl font-bold tracking-tight">David</span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-xs text-muted">
+        <span class="size-1.5 rounded-full bg-accent" aria-hidden="true"></span>
+        {t('hero.role')}
+      </span>
+    </p>
+
+    <h1 class="mt-6 text-[clamp(2.4rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.04em] text-balance">
+      {t('hero.title.a')} <span class="text-muted">{t('hero.title.b')}</span>
+    </h1>
+
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">{t('hero.text')}</p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-3">
+      <a
+        href={`#${t('id.projects')}`}
+        class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-semibold text-black transition-transform duration-300 hover:-translate-y-0.5"
+      >
+        {t('hero.cta.projects')}
+        <Icon name="arrow-down" class="size-4" />
+      </a>
+      <a
+        href={site.github}
+        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 font-medium transition-colors hover:border-accent"
+      >
+        <Icon name="github" class="size-4" />
+        GitHub
+      </a>
+      <a href={`#${t('id.contact')}`} class="group inline-flex items-center gap-2 px-3 py-3 font-medium text-muted transition-colors hover:text-fg">
+        {t('hero.cta.contact')}
+        <Icon name="arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorativo: las mismas capturas aparecen con su alt en las tarjetas de proyecto -->
+  <div class="fan relative mx-auto aspect-[1/0.98] w-full max-w-[460px]" aria-hidden="true">
+    <PhoneFrame src={left} alt="" sizes="(min-width: 1024px) 180px, 37vw" loading="eager" class="fan__phone fan__phone--left" />
+    <PhoneFrame src={right} alt="" sizes="(min-width: 1024px) 180px, 37vw" loading="eager" class="fan__phone fan__phone--right" />
+    <PhoneFrame src={center} alt="" sizes="(min-width: 1024px) 210px, 44vw" loading="eager" class="fan__phone fan__phone--center" />
+  </div>
+</section>
+
+<style>
+  .fan {
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  /* Los tres teléfonos parten del centro y se abren en abanico al cargar */
+  .fan :global(.fan__phone) {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    width: 37%;
+    transform: translateX(calc(-50% + var(--x))) rotate(var(--r));
+    transition: transform 0.6s var(--ease);
+    animation: fan-in 1s var(--ease) 0.15s backwards;
+  }
+
+  .fan :global(.fan__phone--center) {
+    top: 0;
+    z-index: 1;
+    width: 44%;
+    --x: 0%;
+    --r: 0deg;
+    animation-delay: 0s;
+  }
+
+  .fan :global(.fan__phone--left) {
+    --x: -78%;
+    --r: -9deg;
+  }
+
+  .fan :global(.fan__phone--right) {
+    --x: 78%;
+    --r: 9deg;
+  }
+
+  @media (hover: hover) {
+    .fan:hover :global(.fan__phone--left) {
+      --x: -86%;
+      --r: -12deg;
+    }
+
+    .fan:hover :global(.fan__phone--right) {
+      --x: 86%;
+      --r: 12deg;
+    }
+
+    .fan:hover :global(.fan__phone--center) {
+      transform: translateX(-50%) translateY(-0.5rem);
+    }
+  }
+
+  @keyframes fan-in {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(1.5rem) rotate(0deg);
+    }
+  }
+</style>

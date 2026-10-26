@@ -1,0 +1,50 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { site } from '../config/site';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const facts = [
+  [t('about.facts.studies'), t('about.facts.studies.value')],
+  [t('about.facts.university'), t('about.facts.university.value')],
+  [t('about.facts.location'), t('about.facts.location.value')],
+  [t('about.facts.interests'), t('about.facts.interests.value')],
+];
+---
+
+<section id={t('id.about')} aria-labelledby="about-title" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:px-8 lg:py-28">
+  <SectionHeading id="about-title" eyebrow={t('about.eyebrow')} title={t('about.title')} />
+
+  <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <div data-reveal class="space-y-5 text-lg leading-relaxed lg:col-span-7">
+      <p>{t('about.p1')}</p>
+      <p class="text-muted">{t('about.p2')}</p>
+    </div>
+
+    <div data-reveal class="lg:col-span-5">
+      <h3 class="sr-only">{t('about.facts.label')}</h3>
+      <dl class="divide-y divide-line border-y border-line">
+        {
+          facts.map(([term, value]) => (
+            <div class="flex justify-between gap-6 py-3.5">
+              <dt class="text-muted">{term}</dt>
+              <dd class="text-right font-medium">{value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <h3 class="mt-10 font-sans text-xs font-semibold tracking-[0.18em] text-muted uppercase">{t('about.stack')}</h3>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {site.stack.map((tech) => <li class="rounded-full border border-line px-3.5 py-1.5 text-sm">{tech}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
