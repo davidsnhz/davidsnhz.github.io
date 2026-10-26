@@ -33,9 +33,9 @@ const langOptions = (Object.keys(languages) as Lang[]).map((code) => ({
 
 <header class="sticky top-0 z-30 border-b border-line bg-bg/80 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-    <a href={home} class="flex items-center gap-2.5 rounded-lg font-display font-bold" aria-label={t('nav.home')}>
-      <span class="grid size-8 place-items-center rounded-lg bg-fg text-[13px] tracking-tight text-bg" aria-hidden="true">{site.initials}</span>
-      <span class="hidden tracking-tight min-[400px]:inline" aria-hidden="true">{site.name}</span>
+    <a href={home} class="flex items-center gap-2.5 rounded-lg font-brand font-bold" aria-label={t('nav.home')}>
+      <span class="grid size-8 place-items-center rounded-lg bg-fg text-[13px] text-bg" aria-hidden="true">{site.initials}</span>
+      <span class="hidden text-[17px] min-[400px]:inline" aria-hidden="true">{site.name}</span>
     </a>
 
     <nav aria-label={t('nav.label')} class="flex items-center gap-2 text-sm">
