@@ -35,6 +35,16 @@ export default defineConfig({
       fallbacks: ['system-ui', 'sans-serif'],
     },
     {
+      // Respaldo libre (OFL) de Futura Next Bold para el nombre; ver --font-brand en global.css
+      provider: fontProviders.google(),
+      name: 'Jost',
+      cssVariable: '--font-jost',
+      weights: [700],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['sans-serif'],
+    },
+    {
       provider: fontProviders.google(),
       name: 'Inter',
       cssVariable: '--font-inter',
