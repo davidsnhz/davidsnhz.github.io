@@ -1,15 +1,15 @@
 ---
 title: Mus Contador
-description: El marcador de mus para llevar la partida desde el móvil, en la misma mesa.
-stack: [React, Vite, Tailwind, PWA]
+description: El marcador para jugar al mus con el móvil encima de la mesa, sin papelitos ni piedras.
+stack: [HTML, CSS, JavaScript, PWA]
 demo: https://mus-contador.vercel.app
 repo: https://github.com/davidsnhz/Mus
 cover:
   src: ../../../assets/projects/mus-mobile.png
-  alt: Mus Contador en el móvil, Nosotros 13 contra Ellos 27, con los amarracos en palotes y los botones de sumar, restar y Órdago
+  alt: Mus Contador en el móvil, Nosotros 13 contra Ellos 27, con las rayas de cada equipo y los botones de sumar, restar y Órdago
 screenshots:
   - src: ../../../assets/projects/mus-mobile.png
-    alt: Mus Contador en el móvil, Nosotros 13 contra Ellos 27, con los amarracos en palotes y los botones de sumar, restar y Órdago
+    alt: Mus Contador en el móvil, Nosotros 13 contra Ellos 27, con las rayas de cada equipo y los botones de sumar, restar y Órdago
   - src: ../../../assets/projects/mus-desktop.png
     alt: Mus Contador en escritorio con el marcador a cero y los lances Grande, Chica, Pares, Juego y Punto
     device: browser
@@ -19,32 +19,33 @@ featured: true
 
 ## El problema
 
-En una partida de mus la cuenta se lleva con amarracos o de cabeza, y entre lance y lance es fácil perderla o acabar discutiendo cuántas piedras lleva cada pareja. Quería algo que se pudiera dejar en la mesa y que cualquiera entendiera de un vistazo.
+Para llevar la cuenta del mus con los colegas siempre andábamos con papelitos o con piedras por la mesa. Quería algo más cómodo: abrir el móvil, dejarlo en la mesa y a jugar.
 
-## La solución
+## La idea
 
-Mus Contador es una PWA instalable que convierte el móvil en un marcador. La pantalla se divide en dos, Nosotros contra Ellos, con un color para cada equipo (cian y rojo), números grandes y botones de sumar y restar que se pulsan sin tener que apuntar.
+Un marcador pensado para dejarlo encima de la mesa. La pantalla se parte en dos, Nosotros y Ellos, cada equipo con su color (cian y rojo), números bien grandes y botones de sumar y restar que se aciertan sin tener que mirar mucho.
 
-## Funcionalidades clave
+## Qué hace
 
-- Marcador **Nosotros vs Ellos** con números grandes y un color por equipo.
-- Botón de **Órdago** para cada pareja.
-- Amarracos representados como **palotes agrupados de cinco**, igual que se apuntan a mano.
-- Contador de juegos ganados por equipo y barras de progreso hacia el final de la partida.
+- Marcador de Nosotros contra Ellos con las rayas de toda la vida, agrupadas de cinco en cinco.
+- Juegos ganados por cada equipo y una barra que va marcando lo que falta para ganar la partida.
+- Botón de **órdago** para cada equipo.
 - Acceso rápido a los lances: Grande, Chica, Pares, Juego y Punto.
-- Deshacer la última acción, reiniciar la partida y ajustes.
+- Si te equivocas, deshaces. También puedes reiniciar la partida y tocar los ajustes.
+- Funciona **sin internet** y se instala en la pantalla de inicio como una app normal.
 
-## Decisiones técnicas
+## Cómo está hecha
 
-- **React y Vite** para iterar rápido sobre la interfaz y tener un build ligero.
-- **Tailwind CSS** para mantener un sistema visual coherente: fondo oscuro, tipografía grande y solo dos colores con significado, uno por equipo.
-- **PWA instalable**, para abrirla desde la pantalla de inicio como una app más, sin pasar por ninguna tienda.
-- La terminología tradicional del mus (amarracos, órdago, lances) para que cualquier jugador se sienta en casa.
+- **HTML, CSS y JavaScript a pelo**, sin frameworks ni nada que compilar. Para una app así no hacía falta más.
+- Un **service worker** guarda la app la primera vez que la abres y a partir de ahí tira sin conexión. En el bar no siempre hay cobertura.
+- Un **manifest** con el nombre, los iconos y los colores para poder instalarla como PWA.
+- Está en **Vercel**: cada vez que subo un cambio a GitHub se actualiza sola.
+- Fondo negro y solo dos colores, uno por equipo, para que se lea bien de un vistazo.
 
-## Retos
+## Lo más complicado
 
-El reto principal fue de diseño. Una interfaz que se usa en la mesa, entre jugada y jugada, tiene que leerse de un vistazo y perdonar errores: por eso los botones son grandes, cada equipo tiene su color y deshacer está siempre a mano. Mostrar los amarracos como palotes de cinco también me obligó a pensar cómo enseñar muchos puntos sin saturar la pantalla.
+Que se pudiera usar en plena partida. Tienes las cartas en la mano y el móvil en la mesa, así que los botones tenían que ser grandes, cada equipo se tenía que distinguir al momento y equivocarse no podía ser un drama. Por eso deshacer está siempre a mano. Meter muchas rayas sin que la pantalla se llenara también me hizo darle unas cuantas vueltas.
 
-## Qué aprendí
+## Qué me llevo
 
-Que diseñar para un contexto concreto cambia todas las decisiones: el tamaño de los controles, el contraste o cuánto texto mostrar. También aprendí a convertir una aplicación web en una PWA instalable y a cuidar los detalles que hacen que una herramienta pequeña se sienta como una app de verdad.
+Que cuando sabes exactamente dónde y cómo se va a usar algo, muchas decisiones de diseño salen casi solas: el tamaño de los botones, el contraste, cuánto texto poner. Y que no hace falta un framework para que una web se sienta como una app de verdad.

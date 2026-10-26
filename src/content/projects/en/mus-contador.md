@@ -1,15 +1,15 @@
 ---
 title: Mus Contador
-description: A scoreboard for mus, the Spanish card game, to keep track of the game from your phone, right at the table.
-stack: [React, Vite, Tailwind, PWA]
+description: A scorekeeper for mus, the Spanish card game. Your phone sits on the table, no scraps of paper needed.
+stack: [HTML, CSS, JavaScript, PWA]
 demo: https://mus-contador.vercel.app
 repo: https://github.com/davidsnhz/Mus
 cover:
   src: ../../../assets/projects/mus-mobile.png
-  alt: Mus Contador on a phone, Nosotros 13 against Ellos 27, with the score shown as tally marks and the add, subtract and Órdago buttons
+  alt: Mus Contador on a phone, Nosotros 13 against Ellos 27, with each team's tally marks and the add, subtract and Órdago buttons
 screenshots:
   - src: ../../../assets/projects/mus-mobile.png
-    alt: Mus Contador on a phone, Nosotros 13 against Ellos 27, with the score shown as tally marks and the add, subtract and Órdago buttons
+    alt: Mus Contador on a phone, Nosotros 13 against Ellos 27, with each team's tally marks and the add, subtract and Órdago buttons
   - src: ../../../assets/projects/mus-desktop.png
     alt: Mus Contador on desktop with the score at zero and the Grande, Chica, Pares, Juego and Punto rounds
     device: browser
@@ -19,32 +19,33 @@ featured: true
 
 ## The problem
 
-In a game of mus, the traditional Spanish card game, the score is kept with *amarracos* (scoring tokens) or by memory, and between rounds it is easy to lose count or end up arguing about how many points each pair has. I wanted something you could leave on the table that anyone could understand at a glance.
+Whenever I played mus with my friends, we kept score with scraps of paper or little stones on the table. I wanted something easier: open your phone, leave it on the table and play.
 
-## The solution
+## The idea
 
-Mus Contador is an installable PWA that turns your phone into a scoreboard. The screen is split in two, Nosotros (us) against Ellos (them), with one color per team (cyan and red), large numbers and add and subtract buttons you can tap without aiming.
+A scoreboard designed to sit on the table. The screen is split in two, Nosotros (us) and Ellos (them), each team with its own color (cyan and red), really big numbers and add and subtract buttons you can hit without looking too closely.
 
-## Key features
+## What it does
 
-- **Nosotros vs Ellos** scoreboard with large numbers and one color per team.
-- An **Órdago** (all-in bet) button for each pair.
-- Amarracos shown as **tally marks grouped in fives**, just like when you keep score by hand.
-- Games won per team and progress bars towards the end of the match.
-- Quick access to the rounds of the game: Grande, Chica, Pares, Juego and Punto.
-- Undo the last action, restart the match and settings.
+- Nosotros vs Ellos scoreboard with old-school tally marks, grouped in fives.
+- Games won by each team and a bar showing how much is left to win the match.
+- An **órdago** (all-in bet) button for each team.
+- Quick access to the rounds: Grande, Chica, Pares, Juego and Punto.
+- Made a mistake? Undo it. You can also restart the match and change the settings.
+- Works **offline** and installs on your home screen like a regular app.
 
-## Technical decisions
+## How it's built
 
-- **React and Vite** to iterate quickly on the interface and keep the build lightweight.
-- **Tailwind CSS** to keep a consistent visual system: dark background, large type and only two meaningful colors, one per team.
-- **Installable PWA**, so it opens from the home screen like any other app, without going through an app store.
-- Traditional mus terminology (amarracos, órdago, lances) so any player feels at home.
+- **Plain HTML, CSS and JavaScript**, no frameworks and nothing to compile. An app like this didn't need more.
+- A **service worker** saves the app the first time you open it, and from then on it works without a connection. Bars don't always have good signal.
+- A **manifest** with the name, icons and colors so it can be installed as a PWA.
+- It's on **Vercel**: every time I push a change to GitHub, it updates by itself.
+- Black background and just two colors, one per team, so it's easy to read at a glance.
 
-## Challenges
+## The hardest part
 
-The main challenge was design. An interface used at the table, between plays, has to be readable at a glance and forgiving of mistakes: that is why the buttons are large, each team has its own color and undo is always at hand. Showing the amarracos as tally marks in fives also made me think about how to display many points without cluttering the screen.
+Making it usable mid-game. You've got your cards in one hand and the phone on the table, so the buttons had to be big, each team had to stand out instantly and making a mistake couldn't be a big deal. That's why undo is always within reach. Fitting lots of tally marks without filling up the screen also took me a few tries.
 
-## What I learned
+## What I took away
 
-That designing for a specific context changes every decision: the size of the controls, the contrast or how much text to show. I also learned how to turn a web app into an installable PWA and how to take care of the details that make a small tool feel like a real app.
+When you know exactly where and how something is going to be used, a lot of design decisions make themselves: button size, contrast, how much text to show. And you don't need a framework to make a website feel like a real app.

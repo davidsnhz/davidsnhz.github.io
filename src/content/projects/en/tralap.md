@@ -1,15 +1,15 @@
 ---
 title: Tralap
-description: Pack your suitcase without forgetting anything; the list is generated from the destination and the length of the trip.
-stack: [React, Vite, Tailwind, PWA]
+description: Pack your suitcase without forgetting anything. It builds the list from your trip and how many days you're going.
+stack: [React, TypeScript, Vite, Tailwind, PWA]
 demo: https://tralap.vercel.app
 repo: https://github.com/davidsnhz/Tralap
 cover:
   src: ../../../assets/projects/tralap-mobile.png
-  alt: Tralap's My trips screen with three trips, Portugal, Santander and Madrid, and the packing progress of each one
+  alt: Tralap's My trips screen with three trips, Portugal, Santander and Madrid, and how far along each suitcase is
 screenshots:
   - src: ../../../assets/projects/tralap-mobile.png
-    alt: Tralap's My trips screen with three trips, Portugal, Santander and Madrid, and the packing progress of each one
+    alt: Tralap's My trips screen with three trips, Portugal, Santander and Madrid, and how far along each suitcase is
   - src: ../../../assets/projects/tralap-outfits.png
     alt: Trip to Santander in Tralap, Outfits tab, with clothing quantities calculated for 5 days
   - src: ../../../assets/projects/tralap-esenciales.png
@@ -20,34 +20,35 @@ featured: true
 
 ## The problem
 
-Packing usually ends the same way: the mental list falls short and something gets left behind, whether it is the charger, the toothbrush or the swimsuit. And on the way back the same thing happens, just the other way around.
+Packing always ends the same way: you make the list in your head, it falls short and you forget something, whether it's the charger, your toothbrush or your swimsuit. And on the way back it happens again, just the other way around: something stays behind at the hotel.
 
-## The solution
+## The idea
 
-Tralap generates the packing list automatically from two pieces of information: the type of destination and the length of the trip. From there, all that is left is ticking off what is already in the suitcase and, on the way back, checking that nothing is left behind.
+Let the list make itself. You create a trip with the destination, the type of trip, your activities and the number of days, and Tralap puts the list together for you. All you do is tick off what's already in the suitcase.
 
-## Key features
+## What it does
 
-- Each trip has a **destination type and a duration**, and the list is generated automatically.
-- **Destination-based suggestions** (for example, a beach trip adds a swimsuit and a towel) and **clothing quantities calculated** from the number of days.
-- Separate **Outfits** and **Essentials** lists, with the option to add your own items.
-- Progress for each trip with a ring and percentage bars.
-- **My template**: the things I always bring, reusable on any trip.
-- **Return mode**: a checklist so I do not leave anything behind on the way back.
-- Swipe gestures to rename or delete, with micro-interactions and animations.
+- Builds the list based on the type of trip. If it's a beach trip, for example, it adds the swimsuit and the towel.
+- Works out how many clothes to bring based on how many days you're going.
+- Splits the list into **Outfits** and **Essentials**, and you can add your own items.
+- Each trip shows its progress with a ring and percentage bars.
+- **My template**: the things you always bring, ready to add to any trip with one tap.
+- **Return mode**: a checklist to go over the place you stayed before you leave.
+- Swipe a card to rename or delete it, with animations.
+- Installs on your phone and works offline.
 
-## Technical decisions
+## How it's built
 
-- **React, Vite and Tailwind** as the foundation, to focus on the product rather than the setup.
-- The list is calculated from the destination and the days instead of starting from scratch, so every trip starts with something useful from the first moment.
-- Splitting **Outfits** and **Essentials** turns a long list into two blocks that are easy to go through.
-- **PWA**, because you pack with your phone in your hand.
-- A design in white, grey and black with light brown accents, so the app feels calm and tidy.
+- **React with TypeScript** in strict mode, and **Vite**.
+- **Tailwind CSS**, with the app's palette (white, grey, black and light brown) as tokens.
+- **No backend**: everything is stored in localStorage with a schema version, so I can change how data is saved without breaking the trips you already had.
+- **vite-plugin-pwa** for the service worker and the manifest.
+- Respects *prefers-reduced-motion*: if you've reduced animations on your phone, the app reduces them too.
 
-## Challenges
+## The hardest part
 
-The trickiest part was making the generated list useful without being overwhelming: calculating sensible quantities based on the days and adding destination suggestions without filling the screen. Also fine-tuning the swipe gestures and animations so everything felt natural on a phone.
+Making the list useful without overwhelming you. It pulls items from several places (the basics, the trip type suggestions, your activities and your template) and couldn't repeat anything, so every item has an icon showing where it came from. Then fine-tuning the swipe gestures so they felt natural under your thumb.
 
-## What I learned
+## What I took away
 
-To think about the whole journey of real use, from departure to return, and not just the main screen. And that well-made micro-interactions make a big difference in how an app is perceived.
+To think about the whole trip and not just the main screen: the app sticks with you on the way back too. And small animations, when they're done right, completely change how an app feels to use.
