@@ -1,0 +1,252 @@
+---
+// Página de detalle (caso de estudio); la usan /proyectos/[slug] y /en/projects/[slug]
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import Icon from './Icon.astro';
+import PhoneFrame from './PhoneFrame.astro';
+import { homePath, projectPath, useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+import { slugOf, type Project } from '../lib/projects';
+
+interface Props {
+  project: Project;
+  /** Proyecto al que lleva el enlace "Siguiente proyecto" */
+  next: Project;
+  lang: Lang;
+}
+
+const { project, next, lang } = Astro.props;
+const { title, description, stack, demo, repo, screenshots } = project.data;
+const { Content } = await render(project);
+const t = useTranslations(lang);
+const slug = slugOf(project);
+
+const phones = screenshots.filter((s) => s.device === 'phone');
+const desktops = screenshots.filter((s) => s.device === 'browser');
+const demoHost = demo ? new URL(demo).host : undefined;
+
+const alternates = [
+  { lang: 'es', href: projectPath(slug, 'es') },
+  { lang: 'en', href: projectPath(slug, 'en') },
+  { lang: 'x-default', href: projectPath(slug, 'es') },
+];
+---
+
+<BaseLayout title={`${title} · David`} description={description} lang={lang} alternates={alternates} skipLabel={t('skip')}>
+  <Header lang={lang} altHref={projectPath(slug, lang === 'es' ? 'en' : 'es')} />
+
+  <main id="main" class="mx-auto max-w-6xl px-5 sm:px-8">
+    <a
+      href={`${homePath(lang)}#${t('id.projects')}`}
+      class="group mt-8 inline-flex items-center gap-2 rounded-full text-sm text-muted transition-colors hover:text-fg"
+    >
+      <Icon name="arrow-left" class="size-4 transition-transform group-hover:-translate-x-1" />
+      {t('project.back')}
+    </a>
+
+    <header class="grid gap-10 pt-8 pb-12 lg:grid-cols-12 lg:items-end lg:pb-16">
+      <div class="lg:col-span-8">
+        <p class="text-xs font-semibold tracking-[0.18em] text-accent-text uppercase">{t('project.eyebrow')}</p>
+        <h1 class="mt-3 text-5xl leading-[0.95] tracking-[-0.045em] sm:text-7xl">{title}</h1>
+        <p class="mt-5 max-w-xl text-lg text-muted sm:text-xl">{description}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          {
+            demo && (
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-semibold text-black transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                {t('projects.demo')}
+                <Icon name="arrow-up-right" class="size-4" />
+                <span class="sr-only">({t('projects.newTab')})</span>
+              </a>
+            )
+          }
+          {
+            repo && (
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 font-medium transition-colors hover:border-accent"
+              >
+                <Icon name="github" class="size-4" />
+                {t('projects.code')}
+                <span class="sr-only">({t('projects.newTab')})</span>
+              </a>
+            )
+          }
+        </div>
+      </div>
+
+      <dl class="divide-y divide-line border-y border-line text-sm lg:col-span-4" aria-label={t('project.meta')}>
+        <div class="flex justify-between gap-6 py-3.5">
+          <dt class="text-muted">{t('project.role')}</dt>
+          <dd class="text-right font-medium">{t('project.role.value')}</dd>
+        </div>
+        <div class="flex justify-between gap-6 py-3.5">
+          <dt class="text-muted">{t('project.stack')}</dt>
+          <dd class="text-right font-medium">{stack.join(', ')}</dd>
+        </div>
+        {
+          demoHost && (
+            <div class="flex justify-between gap-6 py-3.5">
+              <dt class="text-muted">{t('project.demo')}</dt>
+              <dd class="text-right font-medium">
+                <a href={demo} target="_blank" rel="noopener" class="underline decoration-line underline-offset-4 hover:text-accent-text hover:decoration-accent">
+                  {demoHost}
+                </a>
+              </dd>
+            </div>
+          )
+        }
+      </dl>
+    </header>
+
+    <section aria-label={t('project.gallery')} class="space-y-6">
+      {
+        phones.length > 0 && (
+          <div class="rounded-[2rem] border border-line bg-surface py-10 sm:px-10 sm:py-14">
+            <!-- En móvil, carrusel horizontal; desde sm, fila centrada -->
+            <div
+              class="flex snap-x snap-mandatory gap-5 overflow-x-auto px-[16%] pb-2 sm:flex-wrap sm:justify-center sm:gap-10 sm:overflow-visible sm:px-0"
+              tabindex={phones.length > 1 ? 0 : undefined}
+              role={phones.length > 1 ? 'region' : undefined}
+              aria-label={phones.length > 1 ? t('project.gallery.phones') : undefined}
+            >
+              {phones.map((shot, i) => (
+                <PhoneFrame
+                  src={shot.src}
+                  alt={shot.alt}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  sizes="(min-width: 640px) 240px, 68vw"
+                  class="w-full shrink-0 snap-center sm:w-[230px] lg:w-[250px]"
+                />
+              ))}
+            </div>
+          </div>
+        )
+      }
+      {desktops.map((shot) => <BrowserFrame src={shot.src} alt={shot.alt} url={demoHost} />)}
+    </section>
+
+    <article class="case py-16 sm:py-24">
+      <Content />
+    </article>
+
+    <nav aria-label={t('project.next')} class="border-t border-line py-12 sm:py-16">
+      <a href={projectPath(slugOf(next), lang)} class="group flex items-end justify-between gap-6">
+        <span>
+          <span class="block text-xs font-semibold tracking-[0.18em] text-muted uppercase">{t('project.next')}</span>
+          <span class="mt-2 block font-display text-4xl font-bold tracking-[-0.04em] transition-colors group-hover:text-accent-text sm:text-6xl">
+            {next.data.title}
+          </span>
+        </span>
+        <span
+          class="grid size-12 shrink-0 place-items-center rounded-full border border-line transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-black sm:size-14"
+          aria-hidden="true"
+        >
+          <Icon name="arrow-right" class="size-5" />
+        </span>
+      </a>
+    </nav>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  /* Caso de estudio: títulos numerados a la izquierda y texto a la derecha (en escritorio) */
+  .case {
+    counter-reset: section;
+    display: grid;
+    column-gap: 4rem;
+  }
+
+  .case :global(h2) {
+    margin-top: 4rem;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    line-height: 1.15;
+  }
+
+  .case :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .case :global(h2)::before {
+    counter-increment: section;
+    content: counter(section, decimal-leading-zero);
+    display: block;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--accent-text);
+  }
+
+  .case :global(p) {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  .case :global(ul) {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .case :global(li) {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .case :global(li)::before {
+    content: '';
+    position: absolute;
+    top: 0.85em;
+    left: 0;
+    width: 0.65rem;
+    height: 2px;
+    background: var(--orange);
+  }
+
+  .case :global(strong) {
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  /* Al final para que gane a los márgenes base con la misma especificidad */
+  @media (min-width: 1024px) {
+    .case {
+      grid-template-columns: 4fr 8fr;
+    }
+
+    .case > :global(*) {
+      grid-column: 2;
+    }
+
+    .case > :global(h2) {
+      grid-column: 1;
+    }
+
+    /* El primer bloque tras cada título va en su misma fila, a la misma altura */
+    .case > :global(h2 + *) {
+      margin-top: 4rem;
+    }
+
+    .case > :global(h2:first-child + *) {
+      margin-top: 0;
+    }
+  }
+</style>
