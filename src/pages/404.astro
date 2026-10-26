@@ -1,0 +1,30 @@
+---
+// GitHub Pages sirve dist/404.html para cualquier ruta que no exista, en los dos idiomas
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="404 · David" description="Esta página no existe. / This page doesn't exist." skipLabel="Saltar al contenido">
+  <Header lang="es" altHref="/en/" />
+
+  <main id="main" class="mx-auto flex min-h-[70dvh] max-w-6xl flex-col justify-center px-5 py-20 sm:px-8">
+    <p class="font-display text-[clamp(5rem,20vw,11rem)] leading-none font-bold tracking-[-0.06em]">
+      404<span class="text-accent">.</span>
+    </p>
+    <h1 class="mt-6 text-3xl sm:text-4xl">Esta página no existe.</h1>
+    <p class="mt-2 text-lg text-muted" lang="en">This page doesn't exist.</p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href="/" class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 font-semibold text-black">
+        <Icon name="arrow-left" class="size-4" />
+        Volver al inicio
+      </a>
+      <a href="/en/" lang="en" class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 font-medium hover:border-accent">
+        Back to home
+      </a>
+    </div>
+  </main>
+
+  <Footer lang="es" />
+</BaseLayout>

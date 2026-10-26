@@ -32,7 +32,14 @@ const alternates = [
 ];
 ---
 
-<BaseLayout title={t('meta.title')} description={t('meta.description')} lang={lang} alternates={alternates} skipLabel={t('skip')}>
+<BaseLayout
+  title={t('meta.title')}
+  description={t('meta.description')}
+  lang={lang}
+  image={`/og-${lang}.png`}
+  alternates={alternates}
+  skipLabel={t('skip')}
+>
   <Header lang={lang} altHref={lang === 'es' ? '/en/' : '/'} />
 
   <main id="main">

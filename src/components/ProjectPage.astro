@@ -35,7 +35,14 @@ const alternates = [
 ];
 ---
 
-<BaseLayout title={`${title} · David`} description={description} lang={lang} alternates={alternates} skipLabel={t('skip')}>
+<BaseLayout
+  title={`${title} · David`}
+  description={description}
+  lang={lang}
+  image={`/og-${lang}.png`}
+  alternates={alternates}
+  skipLabel={t('skip')}
+>
   <Header lang={lang} altHref={projectPath(slug, lang === 'es' ? 'en' : 'es')} />
 
   <main id="main" class="mx-auto max-w-6xl px-5 sm:px-8">
