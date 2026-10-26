@@ -85,4 +85,4 @@ En **Settings → Pages**, la opción *Source* tiene que estar en **GitHub Actio
 
 ## Pendiente
 
-- Rellenar `email` y `linkedin` en `src/config/site.ts`. Mientras estén vacíos, no aparecen en la sección de contacto.
+- Añadir la URL de LinkedIn en `src/config/site.ts`. Mientras esté vacía, no aparece en la sección de contacto.

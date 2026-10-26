@@ -5,8 +5,8 @@ export const site = {
   url: 'https://davidsnhz.github.io',
   github: 'https://github.com/davidsnhz',
   sourceRepo: 'https://github.com/davidsnhz/davidsnhz.github.io',
-  // TODO: rellena tu email y tu perfil de LinkedIn
-  email: '',
+  // TODO: añade la URL de tu perfil de LinkedIn cuando lo tengas
+  email: 'davidsnhzv@gmail.com',
   linkedin: '',
   stack: ['JavaScript', 'TypeScript', 'React', 'Vite', 'Tailwind', 'Firebase', 'PWA', 'Git'],
 };
