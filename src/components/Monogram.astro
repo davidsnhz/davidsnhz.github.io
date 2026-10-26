@@ -1,0 +1,22 @@
+---
+// Logo "DS." con el punto naranja detrás de la S, igual que el favicon
+import { site } from '../config/site';
+
+interface Props {
+  size?: 'sm' | 'lg';
+}
+
+const { size = 'sm' } = Astro.props;
+---
+
+<span
+  class:list={[
+    'flex shrink-0 items-center justify-center bg-fg font-display font-bold text-bg',
+    size === 'sm' ? 'size-8 rounded-lg' : 'size-12 rounded-xl',
+  ]}
+  aria-hidden="true"
+>
+  <span class:list={['flex items-baseline leading-none tracking-tight', size === 'sm' ? 'text-[12px]' : 'text-[19px]']}>
+    {site.initials}<span class:list={['rounded-full bg-accent', size === 'sm' ? 'ml-px size-[4px]' : 'ml-0.5 size-[6px]']}></span>
+  </span>
+</span>
