@@ -5,8 +5,7 @@ export function toLang(locale: string | undefined): Lang {
 }
 
 export function useTranslations(lang: Lang) {
-  // El español está completo y hace de respaldo
-  return (key: UiKey): string => ui[lang][key] ?? ui.es[key];
+  return (key: UiKey): string => ui[lang][key];
 }
 
 export function homePath(lang: Lang): string {
