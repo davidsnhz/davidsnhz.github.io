@@ -45,8 +45,8 @@ Una app de entrenamiento, hábitos y constancia con cuatro secciones (Inicio, Ru
 
 ## Lo más complicado
 
-Es el proyecto más grande que tengo. Hay muchas pantallas y muchos datos que dependen unos de otros (sesiones, ejercicios, metas, rachas), y sin framework todo eso lo mantienes tú. Lo que más me costó fue que los datos cuadraran entre el móvil y Firebase, y sacar del historial cosas como el 1RM, las rachas o el heatmap.
+Es el proyecto más grande que tengo. Hay muchas pantallas y muchos datos que dependen unos de otros (sesiones, ejercicios, metas, rachas), y sin framework todo eso lo mantienes tú. Lo que más me costó fue que los datos cuadraran entre el móvil y Firebase, además de sacar del historial cosas como el 1RM, las rachas o el heatmap.
 
-## Qué me llevo
+## Qué aprendí
 
 A pensar primero en los datos: cómo guardarlos, cómo sincronizarlos y cómo enseñarlos para que te motiven. Ver una racha o un récord personal te hace volver más que cualquier recordatorio.

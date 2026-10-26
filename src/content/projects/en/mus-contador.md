@@ -46,6 +46,6 @@ A scoreboard designed to sit on the table. The screen is split in two, Nosotros 
 
 Making it usable mid-game. You've got your cards in one hand and the phone on the table, so the buttons had to be big, each team had to stand out instantly and making a mistake couldn't be a big deal. That's why undo is always within reach. Fitting lots of tally marks without filling up the screen also took me a few tries.
 
-## What I took away
+## What I learned
 
 When you know exactly where and how something is going to be used, a lot of design decisions make themselves: button size, contrast, how much text to show. And you don't need a framework to make a website feel like a real app.
