@@ -38,9 +38,6 @@
   --color-accent-text: var(--accent-text);
   --font-display: var(--font-space-grotesk);
   --font-sans: var(--font-inter);
-  /* Nombre: Futura Next Bold es comercial y no se puede servir sin licencia web.
-     Se usa Futura si el dispositivo la tiene (macOS/iOS la traen) y si no, Jost, su versión libre */
-  --font-brand: 'Futura Next', 'Futura PT', Futura, var(--font-jost);
 }
 
 @layer base {
