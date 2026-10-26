@@ -49,6 +49,6 @@ Let the list make itself. You create a trip with the destination, the type of tr
 
 Making the list useful without overwhelming you. It pulls items from several places (the basics, the trip type suggestions, your activities and your template) and couldn't repeat anything, so every item has an icon showing where it came from. Then fine-tuning the swipe gestures so they felt natural under your thumb.
 
-## What I took away
+## What I learned
 
 To think about the whole trip and not just the main screen: the app sticks with you on the way back too. And small animations, when they're done right, completely change how an app feels to use.

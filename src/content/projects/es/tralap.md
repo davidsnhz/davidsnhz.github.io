@@ -49,6 +49,6 @@ Que la lista se haga sola. Creas el viaje con el destino, el tipo de viaje, las 
 
 Que la lista fuera útil sin agobiar. Junta cosas de varios sitios (lo básico, las sugerencias del tipo de viaje, lo de las actividades y tu plantilla) y no podía repetir nada, así que cada cosa lleva un icono según de dónde sale. Y luego afinar los gestos de deslizar para que se sintieran naturales con el dedo.
 
-## Qué me llevo
+## Qué aprendí
 
 A pensar en todo el viaje y no solo en la pantalla principal: la app también te acompaña a la vuelta. Y que las animaciones pequeñas, si están bien hechas, cambian muchísimo la sensación al usar una app.

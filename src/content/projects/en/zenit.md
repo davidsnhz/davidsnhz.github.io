@@ -45,8 +45,8 @@ A training, habits and consistency app with four sections (Home, Routine, Goals 
 
 ## The hardest part
 
-It's the biggest project I've built. There are lots of screens and lots of data that depend on each other (sessions, exercises, goals, streaks), and without a framework you're the one keeping all of it together. What took me the most work was keeping the data in sync between the phone and Firebase, and calculating things like the 1RM, the streaks or the heatmap from the history.
+It's the biggest project I've built. There are lots of screens and lots of data that depend on each other (sessions, exercises, goals, streaks), and without a framework you're the one keeping all of it together. What took me the most work was keeping the data in sync between the phone and Firebase, as well as calculating things like the 1RM, the streaks or the heatmap from the history.
 
-## What I took away
+## What I learned
 
 To think about the data first: how to store it, how to sync it and how to show it so it motivates you. Seeing a streak or a personal record brings you back more than any reminder.

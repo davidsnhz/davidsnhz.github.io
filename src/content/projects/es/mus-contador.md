@@ -46,6 +46,6 @@ Un marcador pensado para dejarlo encima de la mesa. La pantalla se parte en dos,
 
 Que se pudiera usar en plena partida. Tienes las cartas en la mano y el móvil en la mesa, así que los botones tenían que ser grandes, cada equipo se tenía que distinguir al momento y equivocarse no podía ser un drama. Por eso deshacer está siempre a mano. Meter muchas rayas sin que la pantalla se llenara también me hizo darle unas cuantas vueltas.
 
-## Qué me llevo
+## Qué aprendí
 
 Que cuando sabes exactamente dónde y cómo se va a usar algo, muchas decisiones de diseño salen casi solas: el tamaño de los botones, el contraste, cuánto texto poner. Y que no hace falta un framework para que una web se sienta como una app de verdad.
