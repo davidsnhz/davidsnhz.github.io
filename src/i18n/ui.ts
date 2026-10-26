@@ -21,10 +21,10 @@ const es = {
   'id.contact': 'contacto',
 
   'hero.role': 'Desarrollador web · Ingeniería Informática, UEMC',
-  'hero.title.a': 'Hago apps web de principio a fin.',
-  'hero.title.b': 'Las diseño, las programo y las publico.',
+  'hero.title.a': 'Cuando algo del día a día me da guerra,',
+  'hero.title.b': 'acabo haciéndole una app.',
   'hero.text':
-    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. Por ahora he hecho un marcador para jugar al mus con los colegas, una app para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día.',
+    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. Por ahora he hecho un marcador para jugar al mus, una app para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día.',
   'hero.cta.projects': 'Ver proyectos',
   'hero.cta.contact': 'Contacto',
 
@@ -99,10 +99,10 @@ const en: Record<UiKey, string> = {
   'id.contact': 'contact',
 
   'hero.role': 'Web developer · Computer Engineering, UEMC',
-  'hero.title.a': 'I build web apps from start to finish.',
-  'hero.title.b': 'I design them, code them and ship them.',
+  'hero.title.a': 'When something in my day-to-day gets annoying,',
+  'hero.title.b': 'I end up building an app for it.',
   'hero.text':
-    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. So far I've built a scorekeeper for playing mus (a Spanish card game) with friends, an app to pack your suitcase without forgetting anything and another one to keep my gym routine on track.",
+    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. So far I've built a scorekeeper for playing mus (a Spanish card game), an app to pack your suitcase without forgetting anything and another one to keep my gym routine on track.",
   'hero.cta.projects': 'See projects',
   'hero.cta.contact': 'Contact',
 
