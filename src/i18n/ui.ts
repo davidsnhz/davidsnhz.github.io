@@ -62,6 +62,17 @@ const es = {
   'contact.github': 'GitHub',
   'contact.linkedin': 'LinkedIn',
 
+  'project.back': 'Volver a proyectos',
+  'project.eyebrow': 'Caso de estudio',
+  'project.meta': 'Ficha del proyecto',
+  'project.role': 'Rol',
+  'project.role.value': 'Diseño, desarrollo y despliegue',
+  'project.stack': 'Stack',
+  'project.demo': 'Demo',
+  'project.gallery': 'Capturas',
+  'project.gallery.phones': 'Capturas en el móvil, desplázate para ver más',
+  'project.next': 'Siguiente proyecto',
+
   'footer.built': 'Hecho con Astro y Tailwind',
   'footer.source': 'Código de esta web',
 } as const;

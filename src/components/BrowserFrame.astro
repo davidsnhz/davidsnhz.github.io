@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  /** Lo que se ve en la barra de direcciones */
+  url?: string;
+  class?: string;
+}
+
+const { src, alt, url, class: className } = Astro.props;
+---
+
+<div class:list={['overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_2.5rem_4rem_-2rem_rgb(0_0_0/0.45)]', className]}>
+  <div class="flex items-center gap-3 border-b border-line px-4 py-3" aria-hidden="true">
+    <span class="flex w-12 shrink-0 gap-1.5">
+      <span class="size-2.5 rounded-full bg-line"></span>
+      <span class="size-2.5 rounded-full bg-line"></span>
+      <span class="size-2.5 rounded-full bg-line"></span>
+    </span>
+    {url && <span class="mx-auto truncate rounded-full bg-bg px-4 py-1 text-xs text-muted">{url}</span>}
+    <span class="w-12 shrink-0"></span>
+  </div>
+  <Image src={src} alt={alt} widths={[640, 960, 1280, src.width]} sizes="(min-width: 1152px) 1088px, 92vw" class="block h-auto w-full" />
+</div>
