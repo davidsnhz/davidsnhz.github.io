@@ -7,6 +7,7 @@ import Footer from './Footer.astro';
 import Header from './Header.astro';
 import Icon from './Icon.astro';
 import PhoneFrame from './PhoneFrame.astro';
+import { site } from '../config/site';
 import { homePath, projectPath, useTranslations } from '../i18n/utils';
 import type { Lang } from '../i18n/ui';
 import { slugOf, type Project } from '../lib/projects';
@@ -36,7 +37,7 @@ const alternates = [
 ---
 
 <BaseLayout
-  title={`${title} · David`}
+  title={`${title} · ${site.name}`}
   description={description}
   lang={lang}
   image={`/og-${lang}.png`}

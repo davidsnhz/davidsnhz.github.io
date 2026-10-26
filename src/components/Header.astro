@@ -1,35 +1,45 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import { site } from '../config/site';
 import { homePath, useTranslations } from '../i18n/utils';
-import type { Lang } from '../i18n/ui';
+import { languages, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
   /** Esta misma página en el otro idioma */
   altHref: string;
+  /** Esta página en su idioma (por defecto, la URL actual) */
+  currentHref?: string;
 }
 
-const { lang, altHref } = Astro.props;
+const { lang, altHref, currentHref = Astro.url.pathname } = Astro.props;
 const t = useTranslations(lang);
 const home = homePath(lang);
-const other: Lang = lang === 'es' ? 'en' : 'es';
 
 const links = [
   { href: `${home}#${t('id.projects')}`, label: t('nav.projects') },
   { href: `${home}#${t('id.about')}`, label: t('nav.about') },
   { href: `${home}#${t('id.contact')}`, label: t('nav.contact') },
 ];
+
+// Selector ES | EN: el idioma actual apunta a esta página y el otro a su traducción
+const langOptions = (Object.keys(languages) as Lang[]).map((code) => ({
+  code,
+  name: languages[code],
+  href: code === lang ? currentHref : altHref,
+  current: code === lang,
+}));
 ---
 
 <header class="sticky top-0 z-30 border-b border-line bg-bg/80 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
     <a href={home} class="flex items-center gap-2.5 rounded-lg font-display font-bold" aria-label={t('nav.home')}>
-      <span class="grid size-8 place-items-center rounded-lg bg-fg text-sm text-bg" aria-hidden="true">D</span>
-      <span class="tracking-tight" aria-hidden="true">David</span>
+      <span class="grid size-8 place-items-center rounded-lg bg-fg text-[13px] tracking-tight text-bg" aria-hidden="true">{site.initials}</span>
+      <span class="hidden tracking-tight min-[400px]:inline" aria-hidden="true">{site.name}</span>
     </a>
 
     <nav aria-label={t('nav.label')} class="flex items-center gap-2 text-sm">
-      <ul class="hidden items-center sm:flex">
+      <ul class="hidden items-center md:flex">
         {
           links.map((link) => (
             <li>
@@ -40,16 +50,26 @@ const links = [
           ))
         }
       </ul>
-      <a
-        href={altHref}
-        hreflang={other}
-        lang={other}
-        aria-label={t('nav.switchLang')}
-        title={t('nav.switchLang')}
-        class="grid h-10 min-w-10 place-items-center rounded-full border border-line px-3 text-xs font-semibold uppercase transition-colors hover:border-accent hover:text-accent-text"
-      >
-        {other}
-      </a>
+
+      <div class="flex items-center rounded-full border border-line p-1 text-xs font-semibold" role="group" aria-label={t('nav.language')}>
+        {
+          langOptions.map((option) => (
+            <a
+              href={option.href}
+              hreflang={option.code}
+              lang={option.code}
+              aria-label={option.name}
+              aria-current={option.current ? 'page' : undefined}
+              class:list={[
+                'grid h-8 min-w-9 place-items-center rounded-full px-2.5 uppercase transition-colors',
+                option.current ? 'bg-fg text-bg' : 'text-muted hover:text-accent-text',
+              ]}
+            >
+              {option.code}
+            </a>
+          ))
+        }
+      </div>
       <ThemeToggle label={t('theme.toggle')} />
     </nav>
   </div>
