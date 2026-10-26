@@ -5,7 +5,7 @@ export const defaultLang: Lang = 'es';
 const es = {
   'meta.title': 'David Sánchez · Desarrollador web y estudiante de Ingeniería Informática',
   'meta.description':
-    'Soy David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC. Hago apps web de principio a fin: Mus Contador, Tralap y Zenit.',
+    'Soy David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC. Veo problemas del día a día y les hago una app: Mus Contador, Tralap y Zenit.',
 
   'skip': 'Saltar al contenido',
   'nav.label': 'Principal',
@@ -83,7 +83,7 @@ export type UiKey = keyof typeof es;
 const en: Record<UiKey, string> = {
   'meta.title': 'David Sánchez · Web developer and Computer Engineering student',
   'meta.description':
-    "I'm David Sánchez, a third-year Computer Engineering student at UEMC, Spain. I build web apps from start to finish: Mus Contador, Tralap and Zenit.",
+    "I'm David Sánchez, a third-year Computer Engineering student at UEMC, Spain. I spot everyday problems and build apps for them: Mus Contador, Tralap and Zenit.",
 
   'skip': 'Skip to content',
   'nav.label': 'Main',

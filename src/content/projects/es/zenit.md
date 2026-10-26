@@ -32,7 +32,7 @@ Una app de entrenamiento, hábitos y constancia con cuatro secciones (Inicio, Ru
 - **Inicio**: te saluda según la hora y te enseña la semana del año, la sesión del día, lo que has hecho las últimas dos semanas y las tareas de hoy.
 - **Rutina**: por días o por grupos musculares. Durante la sesión tienes cronómetro, volumen total y un temporizador de descanso que puedes ajustar, y al acabar apuntas cómo ibas de energía.
 - **Metas y tareas**: metas con fecha y tareas diarias que van sumando al progreso.
-- **Constancia**: heatmap de 25 semanas, racha actual y máxima, indicador de constancia, entrenos por mes, mapa muscular, récords personales y estadísticas de siempre.
+- **Constancia**: heatmap de 25 semanas, racha actual y máxima, indicador de constancia, entrenos por mes, mapa muscular, récords personales y estadísticas totales.
 - Por ejercicio: peso máximo, **1RM estimado** y una gráfica para ver cómo vas mejorando. Tiene biblioteca de ejercicios y puedes crear los tuyos.
 - Inicio de sesión con sincronización en la nube, niveles, aviso para no perder la racha, vibración, kg o lb, tema claro y oscuro, y exportar o importar tus datos en JSON.
 
