@@ -21,8 +21,8 @@ const es = {
   'id.contact': 'contacto',
 
   'hero.role': 'Desarrollador web · Ingeniería Informática, UEMC',
-  'hero.title.a': 'Me gusta resolver problemas del día a día',
-  'hero.title.b': 'haciéndoles una app.',
+  'hero.title.a': 'Veo un problema en el día a día',
+  'hero.title.b': 'y acabo haciéndole una app.',
   'hero.text':
     'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. Por ahora he hecho un marcador para jugar al mus, una app para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día.',
   'hero.cta.projects': 'Ver proyectos',
@@ -99,8 +99,8 @@ const en: Record<UiKey, string> = {
   'id.contact': 'contact',
 
   'hero.role': 'Web developer · Computer Engineering, UEMC',
-  'hero.title.a': 'I like solving everyday problems',
-  'hero.title.b': 'by building an app for them.',
+  'hero.title.a': 'I spot an everyday problem',
+  'hero.title.b': 'and end up building an app for it.',
   'hero.text':
     "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. So far I've built a scorekeeper for playing mus (a Spanish card game), an app to pack your suitcase without forgetting anything and another one to keep my gym routine on track.",
   'hero.cta.projects': 'See projects',
