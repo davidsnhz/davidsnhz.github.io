@@ -1,10 +1,9 @@
 ---
 title: Zenit
-description: Entrenamiento, hábitos y constancia; mi rutina de gimnasio, organizada y medible.
+description: Mi app para organizar el gimnasio, apuntar los entrenos y no perder la racha.
 stack: [JavaScript, Firebase, localStorage, PWA]
 demo: https://zenit-three.vercel.app
-# El repo es privado: descomenta esta línea cuando lo hagas público
-# repo: https://github.com/davidsnhz/Zenit
+repo: https://github.com/davidsnhz/Zenit
 cover:
   src: ../../../assets/projects/zenit-mobile.png
   alt: Inicio de Zenit en el móvil con el saludo, la sesión de pecho y tríceps completada, la actividad de las últimas dos semanas y las tareas de hoy
@@ -22,32 +21,32 @@ featured: true
 
 ## El problema
 
-Zenit nació de una necesidad propia: organizar mis rutinas de gimnasio, saber qué me tocaba entrenar cada día y tener algo que me motivara a seguir yendo.
+Zenit la hice para mí. Quería tener las rutinas del gimnasio organizadas, saber qué me tocaba cada día y tener algo que me picara a seguir yendo.
 
-## La solución
+## La idea
 
-Una PWA de entrenamiento, hábitos y constancia organizada en cuatro secciones (Inicio, Rutina, Metas y tareas, y Constancia) con una barra de navegación flotante tipo píldora.
+Una app de entrenamiento, hábitos y constancia con cuatro secciones (Inicio, Rutina, Metas y tareas, y Constancia) y una barra de navegación flotante tipo píldora para moverte entre ellas.
 
-## Funcionalidades clave
+## Qué hace
 
-- **Inicio**: saludo según la hora, semana del año, sesión del día, actividad de las últimas dos semanas y tareas de hoy.
-- **Rutina**: organizada por días o por grupos musculares, con sesiones con cronómetro, volumen total, temporizador de descanso configurable y registro de energía al terminar.
-- **Metas y tareas**: metas con fecha y tareas diarias que suman al progreso.
-- **Constancia**: heatmap de actividad de 25 semanas, racha actual y máxima, indicador de constancia, entrenamientos por mes, mapa muscular, récords personales y estadísticas de por vida.
-- Por ejercicio: peso máximo, **1RM estimado** y gráfica de evolución, además de una biblioteca de ejercicios y ejercicios personalizados.
-- Inicio de sesión y sincronización en la nube, sistema de niveles, recordatorio de racha con notificaciones, vibración háptica, kg/lb, tema claro y oscuro, y exportación e importación de datos en JSON.
+- **Inicio**: te saluda según la hora y te enseña la semana del año, la sesión del día, lo que has hecho las últimas dos semanas y las tareas de hoy.
+- **Rutina**: por días o por grupos musculares. Durante la sesión tienes cronómetro, volumen total y un temporizador de descanso que puedes ajustar, y al acabar apuntas cómo ibas de energía.
+- **Metas y tareas**: metas con fecha y tareas diarias que van sumando al progreso.
+- **Constancia**: heatmap de 25 semanas, racha actual y máxima, indicador de constancia, entrenos por mes, mapa muscular, récords personales y estadísticas de siempre.
+- Por ejercicio: peso máximo, **1RM estimado** y una gráfica para ver cómo vas mejorando. Tiene biblioteca de ejercicios y puedes crear los tuyos.
+- Inicio de sesión con sincronización en la nube, niveles, aviso para no perder la racha, vibración, kg o lb, tema claro y oscuro, y exportar o importar tus datos en JSON.
 
-## Decisiones técnicas
+## Cómo está hecha
 
-- **JavaScript sin frameworks**, lo que me obligó a organizar yo mismo el estado, la navegación entre secciones y el renderizado de cada pantalla.
-- **localStorage y Firebase**: los datos se guardan en el dispositivo y, con la sesión iniciada, se sincronizan en la nube.
-- **Exportar e importar en JSON**, para que los datos sean del usuario y pueda llevárselos.
-- **PWA** con notificaciones para el recordatorio de racha y vibración háptica, para acercar la experiencia a la de una app nativa.
+- **JavaScript a pelo**, sin frameworks. El estado, la navegación entre secciones y el pintado de cada pantalla los organizo yo.
+- Los datos se guardan en **localStorage** y, si inicias sesión, se sincronizan con **Firebase**.
+- **Exportar e importar en JSON**, para que tus datos sean tuyos y te los puedas llevar.
+- **PWA** con notificaciones para el aviso de racha y vibración, para que se parezca lo máximo posible a una app nativa.
 
-## Retos
+## Lo más complicado
 
-Es el proyecto con más piezas: muchas pantallas y muchos datos relacionados entre sí (sesiones, ejercicios, metas, rachas) sin un framework detrás. Mantener todo coherente entre el almacenamiento local y la sincronización con Firebase, y calcular a partir del historial estadísticas como el 1RM estimado, las rachas o el heatmap, fueron las partes más exigentes.
+Es el proyecto más grande que tengo. Hay muchas pantallas y muchos datos que dependen unos de otros (sesiones, ejercicios, metas, rachas), y sin framework todo eso lo mantienes tú. Lo que más me costó fue que los datos cuadraran entre el móvil y Firebase, y sacar del historial cosas como el 1RM, las rachas o el heatmap.
 
-## Qué aprendí
+## Qué me llevo
 
-A diseñar una aplicación pensando en los datos: cómo guardarlos, sincronizarlos y convertirlos en información que motive, como una racha o un récord personal. Y que la constancia también se diseña: ver el progreso es lo que hace que vuelvas.
+A pensar primero en los datos: cómo guardarlos, cómo sincronizarlos y cómo enseñarlos para que te motiven. Ver una racha o un récord personal te hace volver más que cualquier recordatorio.

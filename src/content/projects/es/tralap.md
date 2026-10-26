@@ -1,15 +1,15 @@
 ---
 title: Tralap
-description: Prepara la maleta sin olvidar nada; la lista se genera según el destino y los días.
-stack: [React, Vite, Tailwind, PWA]
+description: Para hacer la maleta sin dejarte nada. Te prepara la lista según el viaje y los días.
+stack: [React, TypeScript, Vite, Tailwind, PWA]
 demo: https://tralap.vercel.app
 repo: https://github.com/davidsnhz/Tralap
 cover:
   src: ../../../assets/projects/tralap-mobile.png
-  alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y el progreso de cada maleta
+  alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y lo que lleva preparado cada maleta
 screenshots:
   - src: ../../../assets/projects/tralap-mobile.png
-    alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y el progreso de cada maleta
+    alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y lo que lleva preparado cada maleta
   - src: ../../../assets/projects/tralap-outfits.png
     alt: Viaje a Santander en Tralap, pestaña Outfits, con las cantidades de ropa calculadas para 5 días
   - src: ../../../assets/projects/tralap-esenciales.png
@@ -20,34 +20,35 @@ featured: true
 
 ## El problema
 
-Hacer la maleta suele acabar igual: la lista mental se queda corta y algo se olvida, ya sea el cargador, el cepillo de dientes o el bañador. Y a la vuelta pasa lo mismo, pero al revés.
+Hacer la maleta siempre acaba igual: te haces la lista de cabeza, se queda corta y te dejas algo, ya sea el cargador, el cepillo de dientes o el bañador. Y a la vuelta pasa lo mismo pero al revés, algo se queda en el alojamiento.
 
-## La solución
+## La idea
 
-Tralap genera la lista de equipaje automáticamente a partir de dos datos: el tipo de destino y la duración del viaje. A partir de ahí solo queda ir marcando lo que ya está en la maleta, y al volver, repasar que no se quede nada atrás.
+Que la lista se haga sola. Creas el viaje con el destino, el tipo de viaje, las actividades y los días, y Tralap te la prepara. Tú solo vas marcando lo que ya está en la maleta.
 
-## Funcionalidades clave
+## Qué hace
 
-- Cada viaje tiene **tipo de destino y duración**, y la lista se genera sola.
-- **Sugerencias según el destino** (por ejemplo, playa añade bañador y toalla) y **cantidades de ropa calculadas** según los días.
-- Listas separadas en **Outfits** y **Esenciales**, con la opción de añadir ítems propios.
-- Progreso de cada viaje con un anillo y barras de porcentaje.
-- **Mi plantilla**: las cosas que siempre llevo, reutilizables en cualquier viaje.
-- **Modo vuelta**: un checklist para no dejarme nada al volver.
-- Gestos de deslizar para renombrar o eliminar, con microinteracciones y animaciones.
+- Te genera la lista según el tipo de viaje. Si es de playa, por ejemplo, te mete el bañador y la toalla.
+- Calcula cuánta ropa llevar según los días que vas.
+- Separa la lista en **Outfits** y **Esenciales**, y puedes añadir tus propias cosas.
+- Cada viaje tiene su progreso, con un anillo y barras de porcentaje.
+- **Mi plantilla**: lo que llevas siempre, para meterlo en cualquier viaje con un toque.
+- **Modo vuelta**: un checklist para repasar el alojamiento antes de irte.
+- Deslizas una tarjeta para renombrarla o borrarla, con sus animaciones.
+- Se instala en el móvil y funciona sin conexión.
 
-## Decisiones técnicas
+## Cómo está hecha
 
-- **React, Vite y Tailwind** como base, para centrarme en el producto y no en la configuración.
-- La lista se calcula a partir del destino y los días en lugar de partir de cero, así cada viaje empieza con algo útil desde el primer momento.
-- Separar **Outfits** y **Esenciales** divide una lista larga en dos bloques fáciles de recorrer.
-- **PWA**, porque la maleta se hace con el móvil en la mano.
-- Un diseño en blanco, gris y negro con acentos en marrón claro, para que la app se sienta tranquila y ordenada.
+- **React con TypeScript** en modo estricto y **Vite**.
+- **Tailwind CSS**, con la paleta de la app (blanco, gris, negro y marrón claro) como tokens.
+- **Sin backend**: todo se guarda en localStorage con una versión de esquema, así puedo cambiar cómo se guardan los datos sin romper los viajes que ya tenías.
+- **vite-plugin-pwa** para el service worker y el manifest.
+- Respeta *prefers-reduced-motion*: si tienes las animaciones reducidas en el móvil, la app también las reduce.
 
-## Retos
+## Lo más complicado
 
-Lo más delicado fue que la lista generada resultara útil sin ser abrumadora: calcular cantidades razonables según los días y añadir las sugerencias del destino sin llenar la pantalla. También ajustar los gestos de deslizar y las animaciones para que todo se sintiera natural en el móvil.
+Que la lista fuera útil sin agobiar. Junta cosas de varios sitios (lo básico, las sugerencias del tipo de viaje, lo de las actividades y tu plantilla) y no podía repetir nada, así que cada cosa lleva un icono según de dónde sale. Y luego afinar los gestos de deslizar para que se sintieran naturales con el dedo.
 
-## Qué aprendí
+## Qué me llevo
 
-A pensar en el recorrido completo de un uso real, de la ida a la vuelta, y no solo en la pantalla principal. Y que las microinteracciones bien hechas cambian mucho cómo se percibe una aplicación.
+A pensar en todo el viaje y no solo en la pantalla principal: la app también te acompaña a la vuelta. Y que las animaciones pequeñas, si están bien hechas, cambian muchísimo la sensación al usar una app.
