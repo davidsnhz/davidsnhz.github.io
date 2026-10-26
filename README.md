@@ -1,6 +1,6 @@
 # davidsnhz.github.io
 
-Portafolio personal de David, estudiante de 3º de Ingeniería Informática en la UEMC.
+Portafolio personal de David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC.
 Publicado en **https://davidsnhz.github.io** (español) y **https://davidsnhz.github.io/en/** (inglés).
 
 ## Stack
@@ -86,4 +86,3 @@ En **Settings → Pages**, la opción *Source* tiene que estar en **GitHub Actio
 ## Pendiente
 
 - Rellenar `email` y `linkedin` en `src/config/site.ts`. Mientras estén vacíos, no aparecen en la sección de contacto.
-- Cuando el repo de Zenit sea público, descomentar la línea `repo:` en `src/content/projects/{es,en}/zenit.md`.

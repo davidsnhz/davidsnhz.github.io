@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
 
 <footer class="border-t border-line">
   <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
-    <p>© {year} David · {t('footer.built')}</p>
+    <p>© {year} {site.name} · {t('footer.built')}</p>
     <a href={site.sourceRepo} class="w-fit transition-colors hover:text-fg">{t('footer.source')} ↗</a>
   </div>
 </footer>

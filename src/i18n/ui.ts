@@ -3,17 +3,17 @@ export type Lang = keyof typeof languages;
 export const defaultLang: Lang = 'es';
 
 const es = {
-  'meta.title': 'David · Desarrollador web y estudiante de Ingeniería Informática',
+  'meta.title': 'David Sánchez · Desarrollador web y estudiante de Ingeniería Informática',
   'meta.description':
-    'Portafolio de David, estudiante de 3º de Ingeniería Informática en la UEMC. Productos web completos, del diseño al despliegue: Mus Contador, Tralap y Zenit.',
+    'Soy David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC. Hago apps web de principio a fin: Mus Contador, Tralap y Zenit.',
 
   'skip': 'Saltar al contenido',
   'nav.label': 'Principal',
-  'nav.home': 'David, inicio',
+  'nav.home': 'David Sánchez, inicio',
   'nav.projects': 'Proyectos',
   'nav.about': 'Sobre mí',
   'nav.contact': 'Contacto',
-  'nav.switchLang': 'Read in English',
+  'nav.language': 'Idioma',
   'theme.toggle': 'Cambiar entre modo claro y oscuro',
 
   'id.projects': 'proyectos',
@@ -21,16 +21,16 @@ const es = {
   'id.contact': 'contacto',
 
   'hero.role': 'Desarrollador web · Ingeniería Informática, UEMC',
-  'hero.title.a': 'Construyo productos web completos,',
-  'hero.title.b': 'del diseño al despliegue.',
+  'hero.title.a': 'Hago apps web de principio a fin.',
+  'hero.title.b': 'Las diseño, las programo y las publico.',
   'hero.text':
-    'Estudio 3º de Ingeniería Informática y me apasionan la informática y la IA. Entre mis proyectos hay un marcador para la mesa de mus, una app para hacer la maleta y otra para entrenar con constancia.',
+    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. Por ahora he hecho un marcador para jugar al mus con los colegas, una app para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día.',
   'hero.cta.projects': 'Ver proyectos',
   'hero.cta.contact': 'Contacto',
 
   'projects.eyebrow': 'Proyectos',
-  'projects.title': 'Proyectos destacados',
-  'projects.intro': 'Aplicaciones web que he diseñado, programado y desplegado de principio a fin.',
+  'projects.title': 'Lo que he hecho',
+  'projects.intro': 'Todas las he diseñado, programado y publicado yo. Puedes probarlas desde aquí mismo.',
   'projects.featured': 'Destacado',
   'projects.demo': 'Ver demo',
   'projects.code': 'Código',
@@ -39,11 +39,11 @@ const es = {
   'projects.wip': 'En desarrollo',
 
   'about.eyebrow': 'Sobre mí',
-  'about.title': 'Me gusta llevar las ideas de principio a fin.',
+  'about.title': 'Me gusta hacer cosas que se usen.',
   'about.p1':
-    'Soy David y estudio 3º de Ingeniería Informática en la Universidad Europea Miguel de Cervantes (UEMC), en España. Me apasionan la informática y la inteligencia artificial.',
+    'Soy David Sánchez y estudio 3º de Ingeniería Informática en la Universidad Europea Miguel de Cervantes (UEMC). Me encanta la informática y estoy muy metido en todo lo relacionado con la IA.',
   'about.p2':
-    'Lo que más disfruto es construir productos completos: pensar qué problema resuelven, diseñar la interfaz, programarlos y desplegarlos para que cualquiera pueda usarlos desde el móvil. Mis proyectos salen de situaciones cotidianas, como llevar la cuenta en una partida de mus, no olvidarme nada al hacer la maleta u organizar mis entrenamientos.',
+    'Casi todo lo que hago sale de algo del día a día: llevar la cuenta del mus sin papelitos, no olvidarme nada al hacer la maleta o tener mis entrenos organizados. Me gusta encargarme de todo, desde pensar cómo va a funcionar hasta publicarlo para que cualquiera lo pueda abrir en el móvil.',
   'about.facts.label': 'Datos rápidos',
   'about.facts.studies': 'Estudios',
   'about.facts.studies.value': 'Ingeniería Informática, 3º',
@@ -51,13 +51,13 @@ const es = {
   'about.facts.university.value': 'UEMC',
   'about.facts.location': 'Ubicación',
   'about.facts.location.value': 'España',
-  'about.facts.interests': 'Intereses',
-  'about.facts.interests.value': 'Informática e IA',
-  'about.stack': 'Stack que domino',
+  'about.facts.interests': 'Me interesa',
+  'about.facts.interests.value': 'Desarrollo web e IA',
+  'about.stack': 'Con lo que trabajo',
 
   'contact.eyebrow': 'Contacto',
   'contact.title': '¿Hablamos?',
-  'contact.text': 'Si te interesa mi trabajo o quieres comentarme algo, escríbeme por cualquiera de estas vías.',
+  'contact.text': 'Si te interesa lo que hago o quieres comentarme cualquier cosa, escríbeme por donde te venga mejor.',
   'contact.email': 'Email',
   'contact.github': 'GitHub',
   'contact.linkedin': 'LinkedIn',
@@ -65,12 +65,12 @@ const es = {
   'project.back': 'Volver a proyectos',
   'project.eyebrow': 'Caso de estudio',
   'project.meta': 'Ficha del proyecto',
-  'project.role': 'Rol',
-  'project.role.value': 'Diseño, desarrollo y despliegue',
+  'project.role': 'Qué hice',
+  'project.role.value': 'Todo: diseño, código y despliegue',
   'project.stack': 'Stack',
   'project.demo': 'Demo',
   'project.gallery': 'Capturas',
-  'project.gallery.phones': 'Capturas en el móvil, desplázate para ver más',
+  'project.gallery.phones': 'Capturas en el móvil, desliza para ver más',
   'project.next': 'Siguiente proyecto',
 
   'footer.built': 'Hecho con Astro y Tailwind',
@@ -81,17 +81,17 @@ export type UiKey = keyof typeof es;
 
 // Record completo: si falta una clave en inglés, TypeScript (astro check) lo marca
 const en: Record<UiKey, string> = {
-  'meta.title': 'David · Web developer and Computer Engineering student',
+  'meta.title': 'David Sánchez · Web developer and Computer Engineering student',
   'meta.description':
-    'Portfolio of David, a third-year Computer Engineering student at UEMC, Spain. Complete web products, from design to deployment: Mus Contador, Tralap and Zenit.',
+    "I'm David Sánchez, a third-year Computer Engineering student at UEMC, Spain. I build web apps from start to finish: Mus Contador, Tralap and Zenit.",
 
   'skip': 'Skip to content',
   'nav.label': 'Main',
-  'nav.home': 'David, home',
+  'nav.home': 'David Sánchez, home',
   'nav.projects': 'Projects',
   'nav.about': 'About',
   'nav.contact': 'Contact',
-  'nav.switchLang': 'Leer en español',
+  'nav.language': 'Language',
   'theme.toggle': 'Toggle light and dark mode',
 
   'id.projects': 'projects',
@@ -99,16 +99,16 @@ const en: Record<UiKey, string> = {
   'id.contact': 'contact',
 
   'hero.role': 'Web developer · Computer Engineering, UEMC',
-  'hero.title.a': 'I build complete web products,',
-  'hero.title.b': 'from design to deployment.',
+  'hero.title.a': 'I build web apps from start to finish.',
+  'hero.title.b': 'I design them, code them and ship them.',
   'hero.text':
-    "I'm a third-year Computer Engineering student, passionate about computing and AI. My projects include a scorekeeper for mus, the Spanish card game, an app to pack your suitcase and another one to train consistently.",
+    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. So far I've built a scorekeeper for playing mus (a Spanish card game) with friends, an app to pack your suitcase without forgetting anything and another one to keep my gym routine on track.",
   'hero.cta.projects': 'See projects',
   'hero.cta.contact': 'Contact',
 
   'projects.eyebrow': 'Projects',
-  'projects.title': 'Featured projects',
-  'projects.intro': 'Web apps I designed, built and deployed end to end.',
+  'projects.title': "What I've built",
+  'projects.intro': 'I designed, coded and shipped all of them myself. You can try them right from here.',
   'projects.featured': 'Featured',
   'projects.demo': 'Live demo',
   'projects.code': 'Code',
@@ -117,11 +117,11 @@ const en: Record<UiKey, string> = {
   'projects.wip': 'In development',
 
   'about.eyebrow': 'About',
-  'about.title': 'I like taking ideas from start to finish.',
+  'about.title': 'I like making things people actually use.',
   'about.p1':
-    "I'm David, a third-year Computer Engineering student at Universidad Europea Miguel de Cervantes (UEMC), in Spain. I'm passionate about computing and artificial intelligence.",
+    "I'm David Sánchez and I'm in my third year of Computer Engineering at Universidad Europea Miguel de Cervantes (UEMC), in Spain. I love computing and I'm really into everything related to AI.",
   'about.p2':
-    'What I enjoy most is building complete products: thinking about the problem they solve, designing the interface, coding them and deploying them so anyone can use them from their phone. My projects come from everyday situations, like keeping score in a game of mus, not forgetting anything when packing or organizing my workouts.',
+    'Most of what I build comes from everyday stuff: keeping score at mus without scraps of paper, not forgetting anything when packing, or keeping my workouts organized. I like handling all of it, from figuring out how it should work to publishing it so anyone can open it on their phone.',
   'about.facts.label': 'Quick facts',
   'about.facts.studies': 'Studies',
   'about.facts.studies.value': 'Computer Engineering, 3rd year',
@@ -129,13 +129,13 @@ const en: Record<UiKey, string> = {
   'about.facts.university.value': 'UEMC',
   'about.facts.location': 'Location',
   'about.facts.location.value': 'Spain',
-  'about.facts.interests': 'Interests',
-  'about.facts.interests.value': 'Computing and AI',
-  'about.stack': 'Tech stack',
+  'about.facts.interests': 'Interested in',
+  'about.facts.interests.value': 'Web development and AI',
+  'about.stack': 'What I work with',
 
   'contact.eyebrow': 'Contact',
   'contact.title': "Let's talk",
-  'contact.text': "If my work interests you or you'd like to tell me something, reach out through any of these channels.",
+  'contact.text': "If you like what I do or want to tell me anything, reach out wherever suits you best.",
   'contact.email': 'Email',
   'contact.github': 'GitHub',
   'contact.linkedin': 'LinkedIn',
@@ -143,12 +143,12 @@ const en: Record<UiKey, string> = {
   'project.back': 'Back to projects',
   'project.eyebrow': 'Case study',
   'project.meta': 'Project details',
-  'project.role': 'Role',
-  'project.role.value': 'Design, development and deployment',
+  'project.role': 'What I did',
+  'project.role.value': 'Everything: design, code and deployment',
   'project.stack': 'Stack',
   'project.demo': 'Demo',
   'project.gallery': 'Screenshots',
-  'project.gallery.phones': 'Phone screenshots, scroll to see more',
+  'project.gallery.phones': 'Phone screenshots, swipe to see more',
   'project.next': 'Next project',
 
   'footer.built': 'Built with Astro and Tailwind',
