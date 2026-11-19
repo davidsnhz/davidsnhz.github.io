@@ -41,7 +41,7 @@ const es = {
   'about.eyebrow': 'Sobre mí',
   'about.title': 'Me gusta hacer cosas que se usen.',
   'about.p1':
-    'Soy David Sánchez y estudio 3º de Ingeniería Informática en la Universidad Europea Miguel de Cervantes (UEMC). Me encanta la informática y estoy muy metido en todo lo relacionado con la IA.',
+    'Soy David Sánchez y estudio 3º de Ingeniería Informática en la Universidad Europea Miguel de Cervantes (UEMC). Me encanta la informática y todo lo relacionado con la IA.',
   'about.p2':
     'Casi todo lo que hago sale de algo del día a día: llevar la cuenta del mus sin papelitos, no olvidarme nada al hacer la maleta, tener mis entrenos organizados o acordarme de quién me debe dinero. Me gusta encargarme de todo, desde pensar cómo va a funcionar hasta publicarlo para que cualquiera lo pueda abrir en el móvil.',
   'about.facts.label': 'Datos rápidos',
@@ -119,7 +119,7 @@ const en: Record<UiKey, string> = {
   'about.eyebrow': 'About',
   'about.title': 'I like making things people actually use.',
   'about.p1':
-    "I'm David Sánchez and I'm in my third year of Computer Engineering at Universidad Europea Miguel de Cervantes (UEMC), in Spain. I love computing and I'm really into everything related to AI.",
+    "I'm David Sánchez and I'm in my third year of Computer Engineering at Universidad Europea Miguel de Cervantes (UEMC), in Spain. I love computing and everything related to AI.",
   'about.p2':
     'Most of what I build comes from everyday stuff: keeping score at mus without scraps of paper, not forgetting anything when packing, keeping my workouts organized or remembering who owes me money. I like handling all of it, from figuring out how it should work to publishing it so anyone can open it on their phone.',
   'about.facts.label': 'Quick facts',
