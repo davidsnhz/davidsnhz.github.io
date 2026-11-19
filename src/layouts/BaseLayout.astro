@@ -80,8 +80,13 @@ const ogImage = image ? new URL(image, Astro.site) : undefined;
           (entries) => {
             for (const entry of entries) {
               if (!entry.isIntersecting) continue;
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
+              // En el carrusel del móvil las tarjetas de los lados se ven al deslizar: aparecen todas a la vez
+              const rail = entry.target.closest('[data-rail]');
+              const group = rail && rail.scrollWidth > rail.clientWidth ? rail.querySelectorAll('[data-reveal]') : [entry.target];
+              for (const el of group) {
+                el.classList.add('is-visible');
+                observer.unobserve(el);
+              }
             }
           },
           { rootMargin: '0px 0px -8% 0px' },

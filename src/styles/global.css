@@ -74,6 +74,28 @@
   }
 }
 
+/* Carrusel de proyectos del móvil: sin barra de scroll visible (se desliza con el dedo) */
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Cada tarjeta del carrusel: deja asomar la siguiente y encaja al soltar. Desde md es una rejilla normal */
+@utility rail-item {
+  width: min(100% - 2rem, 22rem);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  @media (width >= 48rem) {
+    width: auto;
+    flex-shrink: 1;
+    scroll-snap-align: none;
+  }
+}
+
 /* Aparición suave al hacer scroll (ver script en BaseLayout). Sin JS o con reduced-motion, todo visible */
 @media (prefers-reduced-motion: no-preference) {
   .js [data-reveal] {
