@@ -24,7 +24,7 @@ const es = {
   'hero.title.a': 'Veo un problema en el día a día',
   'hero.title.b': 'y acabo haciéndole una app.',
   'hero.text':
-    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. He hecho un marcador para jugar al mus, una app para acordarte de quién te debe dinero, otra para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día. Ahora estoy con un juego de mus.',
+    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. He hecho diferentes aplicaciones para diferentes ámbitos del día a día, debajo están todos los proyectos con una breve explicación y el enlace para poder probarlas.',
   'hero.cta.projects': 'Ver proyectos',
   'hero.cta.contact': 'Contacto',
 
@@ -102,7 +102,7 @@ const en: Record<UiKey, string> = {
   'hero.title.a': 'I spot an everyday problem',
   'hero.title.b': 'and end up building an app for it.',
   'hero.text':
-    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. I've built a scorekeeper for playing mus (a Spanish card game), an app to remember who owes you money, another one to pack your suitcase without forgetting anything and another one to keep my gym routine on track. Right now I'm working on a mus video game.",
+    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. I've built different apps for different parts of everyday life. Below you'll find all my projects with a short explanation and a link so you can try them.",
   'hero.cta.projects': 'See projects',
   'hero.cta.contact': 'Contact',
 
