@@ -8,5 +8,5 @@ export const site = {
   // TODO: añade la URL de tu perfil de LinkedIn cuando lo tengas
   email: 'davidsnhzv@gmail.com',
   linkedin: '',
-  stack: ['JavaScript', 'TypeScript', 'React', 'Vite', 'Tailwind', 'Firebase', 'PWA', 'Git'],
+  stack: ['JavaScript', 'TypeScript', 'React', 'React Native', 'Vite', 'Tailwind', 'Firebase', 'PWA', 'Git'],
 };

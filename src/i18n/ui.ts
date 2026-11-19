@@ -5,7 +5,7 @@ export const defaultLang: Lang = 'es';
 const es = {
   'meta.title': 'David Sánchez · Desarrollador web y estudiante de Ingeniería Informática',
   'meta.description':
-    'Soy David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC. Veo problemas del día a día y les hago una app: Mus Contador, Tralap y Zenit.',
+    'Soy David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC. Veo problemas del día a día y les hago una app, como Mus Contador, Mober, Tralap o Zenit.',
 
   'skip': 'Saltar al contenido',
   'nav.label': 'Principal',
@@ -24,7 +24,7 @@ const es = {
   'hero.title.a': 'Veo un problema en el día a día',
   'hero.title.b': 'y acabo haciéndole una app.',
   'hero.text':
-    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. Por ahora he hecho un marcador para jugar al mus, una app para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día.',
+    'Estudio 3º de Ingeniería Informática y me encanta todo lo que tiene que ver con la informática y la IA. He hecho un marcador para jugar al mus, una app para acordarte de quién te debe dinero, otra para hacer la maleta sin dejarte nada y otra para llevar el gimnasio al día. Ahora estoy con un juego de mus.',
   'hero.cta.projects': 'Ver proyectos',
   'hero.cta.contact': 'Contacto',
 
@@ -43,7 +43,7 @@ const es = {
   'about.p1':
     'Soy David Sánchez y estudio 3º de Ingeniería Informática en la Universidad Europea Miguel de Cervantes (UEMC). Me encanta la informática y estoy muy metido en todo lo relacionado con la IA.',
   'about.p2':
-    'Casi todo lo que hago sale de algo del día a día: llevar la cuenta del mus sin papelitos, no olvidarme nada al hacer la maleta o tener mis entrenos organizados. Me gusta encargarme de todo, desde pensar cómo va a funcionar hasta publicarlo para que cualquiera lo pueda abrir en el móvil.',
+    'Casi todo lo que hago sale de algo del día a día: llevar la cuenta del mus sin papelitos, no olvidarme nada al hacer la maleta, tener mis entrenos organizados o acordarme de quién me debe dinero. Me gusta encargarme de todo, desde pensar cómo va a funcionar hasta publicarlo para que cualquiera lo pueda abrir en el móvil.',
   'about.facts.label': 'Datos rápidos',
   'about.facts.studies': 'Estudios',
   'about.facts.studies.value': 'Ingeniería Informática, 3º',
@@ -83,7 +83,7 @@ export type UiKey = keyof typeof es;
 const en: Record<UiKey, string> = {
   'meta.title': 'David Sánchez · Web developer and Computer Engineering student',
   'meta.description':
-    "I'm David Sánchez, a third-year Computer Engineering student at UEMC, Spain. I spot everyday problems and build apps for them: Mus Contador, Tralap and Zenit.",
+    "I'm David Sánchez, a third-year Computer Engineering student at UEMC, Spain. I spot everyday problems and build apps for them, like Mus Contador, Mober, Tralap or Zenit.",
 
   'skip': 'Skip to content',
   'nav.label': 'Main',
@@ -102,7 +102,7 @@ const en: Record<UiKey, string> = {
   'hero.title.a': 'I spot an everyday problem',
   'hero.title.b': 'and end up building an app for it.',
   'hero.text':
-    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. So far I've built a scorekeeper for playing mus (a Spanish card game), an app to pack your suitcase without forgetting anything and another one to keep my gym routine on track.",
+    "I'm a third-year Computer Engineering student and I love anything to do with computing and AI. I've built a scorekeeper for playing mus (a Spanish card game), an app to remember who owes you money, another one to pack your suitcase without forgetting anything and another one to keep my gym routine on track. Right now I'm working on a mus video game.",
   'hero.cta.projects': 'See projects',
   'hero.cta.contact': 'Contact',
 
@@ -121,7 +121,7 @@ const en: Record<UiKey, string> = {
   'about.p1':
     "I'm David Sánchez and I'm in my third year of Computer Engineering at Universidad Europea Miguel de Cervantes (UEMC), in Spain. I love computing and I'm really into everything related to AI.",
   'about.p2':
-    'Most of what I build comes from everyday stuff: keeping score at mus without scraps of paper, not forgetting anything when packing, or keeping my workouts organized. I like handling all of it, from figuring out how it should work to publishing it so anyone can open it on their phone.',
+    'Most of what I build comes from everyday stuff: keeping score at mus without scraps of paper, not forgetting anything when packing, keeping my workouts organized or remembering who owes me money. I like handling all of it, from figuring out how it should work to publishing it so anyone can open it on their phone.',
   'about.facts.label': 'Quick facts',
   'about.facts.studies': 'Studies',
   'about.facts.studies.value': 'Computer Engineering, 3rd year',
