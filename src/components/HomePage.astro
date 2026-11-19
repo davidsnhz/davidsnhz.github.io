@@ -48,7 +48,11 @@ const alternates = [
     <section id={t('id.projects')} aria-labelledby="projects-title" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-12 sm:px-8 lg:py-16">
       <SectionHeading id="projects-title" eyebrow={t('projects.eyebrow')} title={t('projects.title')} intro={t('projects.intro')} />
 
-      <div class="grid gap-5 md:grid-cols-2">
+      <!-- En el móvil, fila que se desliza de lado (con la siguiente tarjeta asomando); desde tablet, rejilla de dos columnas -->
+      <div
+        data-rail
+        class="no-scrollbar -mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto overscroll-x-contain px-5 sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0"
+      >
         <ProjectCard project={featured} lang={lang} featured />
         {others.map((project) => <ProjectCard project={project} lang={lang} />)}
 
@@ -56,7 +60,7 @@ const alternates = [
           wip.map((project) => (
             <article
               data-reveal
-              class="flex flex-wrap items-center justify-between gap-4 rounded-[2rem] border border-dashed border-line px-7 py-6 sm:px-10 md:col-span-2"
+              class="rail-item flex flex-wrap items-center justify-between gap-4 rounded-[2rem] border border-dashed border-line px-7 py-6 sm:px-10 md:col-span-2"
             >
               <div>
                 <h3 class="text-xl sm:text-2xl">{project.data.title}</h3>
@@ -67,6 +71,20 @@ const alternates = [
           ))
         }
       </div>
+
+      <!-- Indicador del carrusel (solo móvil): puntos y "1 / 7"; decorativo, el lector de pantalla recorre la lista entera -->
+      <div class="mt-6 flex items-center justify-between gap-4 md:hidden" aria-hidden="true">
+        <div class="flex items-center gap-1.5" data-rail-dots>
+          {
+            [...live, ...wip].map((_, i) => (
+              <span class:list={['h-1.5 rounded-full transition-all duration-300', i === 0 ? 'w-6 bg-accent' : 'w-1.5 bg-line']} />
+            ))
+          }
+        </div>
+        <p class="text-sm text-muted tabular-nums">
+          <span data-rail-count>1</span> / {live.length + wip.length}
+        </p>
+      </div>
     </section>
 
     <About lang={lang} />
@@ -75,3 +93,34 @@ const alternates = [
 
   <Footer lang={lang} />
 </BaseLayout>
+
+<script>
+  // Marca en el indicador qué tarjeta del carrusel se está viendo
+  const rail = document.querySelector<HTMLElement>('[data-rail]');
+  const dots = [...document.querySelectorAll<HTMLElement>('[data-rail-dots] > span')];
+  const count = document.querySelector('[data-rail-count]');
+
+  if (rail && count && rail.children.length > 1) {
+    const items = [...rail.children] as HTMLElement[];
+    let current = 0;
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const step = items[1].offsetLeft - items[0].offsetLeft;
+      const atEnd = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 4;
+      const index = atEnd ? items.length - 1 : Math.round(rail.scrollLeft / step);
+      if (index === current) return;
+      current = index;
+      count.textContent = String(index + 1);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('w-6', i === index);
+        dot.classList.toggle('bg-accent', i === index);
+        dot.classList.toggle('w-1.5', i !== index);
+        dot.classList.toggle('bg-line', i !== index);
+      });
+    };
+
+    rail.addEventListener('scroll', () => (frame ||= requestAnimationFrame(update)), { passive: true });
+  }
+</script>
