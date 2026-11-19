@@ -12,7 +12,8 @@ export async function getProjects(lang: Lang) {
   const all = await getCollection('projects', (p) => p.id.startsWith(`${lang}/`));
   all.sort((a, b) => a.data.order - b.data.order);
   return {
-    live: all.filter((p) => p.data.status === 'live'),
+    // Los que tienen tarjeta completa y página de detalle (también los 'beta')
+    live: all.filter((p) => p.data.status !== 'wip'),
     wip: all.filter((p) => p.data.status === 'wip'),
   };
 }

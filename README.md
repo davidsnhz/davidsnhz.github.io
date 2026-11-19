@@ -67,7 +67,8 @@ screenshots:                 # galería de la página de detalle
     device: browser          # phone (por defecto) o browser
 order: 4                     # posición en la home
 featured: true
-status: live                 # live, o wip para "En desarrollo" (sin enlaces ni detalle)
+status: live                 # live; beta = se puede probar pero lleva la etiqueta "En desarrollo";
+                             # wip = "En desarrollo" sin enlaces ni página de detalle
 ---
 
 ## El problema
