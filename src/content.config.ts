@@ -28,8 +28,9 @@ const projects = defineCollection({
       screenshots: z.array(screenshot).default([]),
       order: z.number(),
       featured: z.boolean().default(false),
-      // 'wip' = en desarrollo: tarjeta pequeña, sin enlaces ni página de detalle
-      status: z.enum(['live', 'wip']).default('live'),
+      // 'beta' = se puede probar pero sigue en desarrollo: tarjeta y página normales con la etiqueta "En desarrollo"
+      // 'wip'  = en desarrollo sin nada que probar: tarjeta pequeña, sin enlaces ni página de detalle
+      status: z.enum(['live', 'beta', 'wip']).default('live'),
     });
   },
 });
