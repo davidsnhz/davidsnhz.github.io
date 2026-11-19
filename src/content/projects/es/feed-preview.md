@@ -3,6 +3,7 @@ title: Feed Preview
 description: Para ver cómo quedan tus fotos en el feed de tu perfil antes de publicarlas.
 stack: [JavaScript, Vite, IndexedDB, SortableJS]
 demo: https://feed-preview-eosin.vercel.app
+repo: https://github.com/davidsnhz/feed-preview
 cover:
   src: ../../../assets/projects/feed-preview-mobile.jpg
   alt: Feed Preview con un perfil de ejemplo y doce fotos de paisajes en la cuadrícula 3:4

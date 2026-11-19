@@ -3,6 +3,7 @@ title: Feed Preview
 description: To see how your photos will look on your profile feed before you post them.
 stack: [JavaScript, Vite, IndexedDB, SortableJS]
 demo: https://feed-preview-eosin.vercel.app
+repo: https://github.com/davidsnhz/feed-preview
 cover:
   src: ../../../assets/projects/feed-preview-mobile.jpg
   alt: Feed Preview with a sample profile and twelve landscape pictures in the 3:4 grid
