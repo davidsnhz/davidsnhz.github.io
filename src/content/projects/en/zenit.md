@@ -15,7 +15,7 @@ screenshots:
   - src: ../../../assets/projects/zenit-desktop.png
     alt: Zenit's home screen on desktop with the rest day card and the calendar for the last two weeks
     device: browser
-order: 3
+order: 4
 featured: true
 ---
 

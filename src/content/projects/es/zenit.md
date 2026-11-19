@@ -15,7 +15,7 @@ screenshots:
   - src: ../../../assets/projects/zenit-desktop.png
     alt: Inicio de Zenit en escritorio con la tarjeta de descanso y el calendario de las últimas dos semanas
     device: browser
-order: 3
+order: 4
 featured: true
 ---
 
