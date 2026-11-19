@@ -6,15 +6,17 @@ demo: https://tralap.vercel.app
 repo: https://github.com/davidsnhz/Tralap
 cover:
   src: ../../../assets/projects/tralap-mobile.png
-  alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y lo que lleva preparado cada maleta
+  alt: Pantalla Mis viajes de Tralap con tres viajes, Picos de Europa, Santander y Madrid, y lo que lleva preparado cada maleta
 screenshots:
   - src: ../../../assets/projects/tralap-mobile.png
-    alt: Pantalla Mis viajes de Tralap con tres viajes, Portugal, Santander y Madrid, y lo que lleva preparado cada maleta
+    alt: Pantalla Mis viajes de Tralap con tres viajes, Picos de Europa, Santander y Madrid, y lo que lleva preparado cada maleta
   - src: ../../../assets/projects/tralap-outfits.png
     alt: Viaje a Santander en Tralap, pestaña Outfits, con las cantidades de ropa calculadas para 5 días
   - src: ../../../assets/projects/tralap-esenciales.png
-    alt: Viaje a Santander en Tralap, pestaña Esenciales, con sugerencias para playa
-order: 2
+    alt: Esenciales del viaje a Santander en Tralap, con un icono que indica si cada cosa es una sugerencia para playa, sale de la actividad de agua o de tu plantilla
+  - src: ../../../assets/projects/tralap-oscuro.png
+    alt: Pantalla Mis viajes de Tralap en modo oscuro
+order: 3
 featured: true
 ---
 
@@ -34,15 +36,18 @@ Que la lista se haga sola. Creas el viaje con el destino, el tipo de viaje, las 
 - Cada viaje tiene su progreso, con un anillo y barras de porcentaje.
 - **Mi plantilla**: lo que llevas siempre, para meterlo en cualquier viaje con un toque.
 - **Modo vuelta**: un checklist para repasar el alojamiento antes de irte.
-- Deslizas una tarjeta para renombrarla o borrarla, con sus animaciones.
+- Deslizas una tarjeta para renombrarla o borrarla, con sus animaciones, y si borras algo sin querer lo puedes deshacer.
+- **Copia de seguridad** de tus datos para guardarla o restaurarla sin duplicar ni borrar nada.
+- Modo oscuro, que sigue al del móvil si no eliges uno en Ajustes.
 - Se instala en el móvil y funciona sin conexión.
 
 ## Cómo está hecha
 
 - **React con TypeScript** en modo estricto y **Vite**.
-- **Tailwind CSS**, con la paleta de la app (blanco, gris, negro y marrón claro) como tokens.
-- **Sin backend**: todo se guarda en localStorage con una versión de esquema, así puedo cambiar cómo se guardan los datos sin romper los viajes que ya tenías.
+- **Tailwind CSS**. La interfaz es casi toda blanco, negro y grises, y el marrón queda solo para lo que se pulsa o está elegido. Los colores están en un único archivo que usan Tailwind, el CSS y el manifest.
+- **Sin backend**: todo se guarda en localStorage con una versión de esquema, así puedo cambiar cómo se guardan los datos sin romper los viajes que ya tenías. Lo que no se puede leer se aparta en vez de perderse.
 - **vite-plugin-pwa** para el service worker y el manifest.
+- Tests con **Vitest**, ESLint y GitHub Actions para comprobarlo todo en cada cambio.
 - Respeta *prefers-reduced-motion*: si tienes las animaciones reducidas en el móvil, la app también las reduce.
 
 ## Lo más complicado
