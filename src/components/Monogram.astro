@@ -1,7 +1,6 @@
 ---
-// Logo "DS." con el punto naranja detrás de la S, igual que el favicon
-import { site } from '../config/site';
-
+// Logo "ds_": las letras son trazos de Space Grotesk Bold (no texto) para que se vea igual que el favicon.
+// La barra baja hace de cursor de terminal y parpadea; con reduced-motion se queda fija.
 interface Props {
   size?: 'sm' | 'lg';
 }
@@ -9,14 +8,39 @@ interface Props {
 const { size = 'sm' } = Astro.props;
 ---
 
-<span
-  class:list={[
-    'flex shrink-0 items-center justify-center bg-fg font-display font-bold text-bg',
-    size === 'sm' ? 'size-8 rounded-lg' : 'size-12 rounded-xl',
-  ]}
-  aria-hidden="true"
->
-  <span class:list={['flex items-baseline leading-none tracking-tight', size === 'sm' ? 'text-[12px]' : 'text-[19px]']}>
-    {site.initials}<span class:list={['rounded-full bg-accent', size === 'sm' ? 'ml-px size-[4px]' : 'ml-0.5 size-[6px]']}></span>
-  </span>
-</span>
+<svg viewBox="0 0 48 48" class:list={['shrink-0', size === 'sm' ? 'size-8' : 'size-12']} aria-hidden="true">
+  <rect class="tile" width="48" height="48" rx="12"></rect>
+  <path
+    class="letters"
+    d="M11.93 31.71Q10.64 31.71 9.5 31.06Q8.37 30.41 7.69 29.16Q7.01 27.9 7.01 26.12L7.01 25.77Q7.01 23.99 7.69 22.73Q8.37 21.48 9.49 20.83Q10.61 20.18 11.93 20.18Q12.92 20.18 13.59 20.41Q14.27 20.64 14.68 20.99Q15.1 21.35 15.32 21.74L15.72 21.74L15.72 16L18.49 16L18.49 31.4L15.76 31.4L15.76 30.08L15.37 30.08Q14.99 30.7 14.21 31.2Q13.43 31.71 11.93 31.71ZM12.77 29.29Q14.05 29.29 14.9 28.46Q15.76 27.64 15.76 26.05L15.76 25.83Q15.76 24.25 14.91 23.42Q14.07 22.6 12.77 22.6Q11.49 22.6 10.64 23.42Q9.78 24.25 9.78 25.83L9.78 26.05Q9.78 27.64 10.64 28.46Q11.49 29.29 12.77 29.29ZM25.5 31.71Q23.37 31.71 22 30.78Q20.64 29.86 20.35 28.14L22.91 27.48Q23.06 28.25 23.42 28.69Q23.79 29.13 24.32 29.32Q24.86 29.51 25.5 29.51Q26.47 29.51 26.93 29.17Q27.39 28.83 27.39 28.32Q27.39 27.81 26.95 27.54Q26.51 27.26 25.55 27.09L24.93 26.98Q23.79 26.76 22.84 26.37Q21.89 25.99 21.32 25.31Q20.75 24.62 20.75 23.55Q20.75 21.92 21.94 21.05Q23.13 20.18 25.06 20.18Q26.89 20.18 28.1 20.99Q29.31 21.81 29.68 23.13L27.11 23.92Q26.93 23.08 26.39 22.73Q25.85 22.38 25.06 22.38Q24.27 22.38 23.85 22.66Q23.43 22.93 23.43 23.41Q23.43 23.94 23.87 24.2Q24.31 24.45 25.06 24.58L25.68 24.69Q26.91 24.91 27.91 25.27Q28.91 25.64 29.49 26.31Q30.08 26.98 30.08 28.12Q30.08 29.84 28.84 30.77Q27.59 31.71 25.5 31.71Z"
+  ></path>
+  <rect class="cursor" x="31" y="28.4" width="10" height="3.6"></rect>
+</svg>
+
+<style>
+  /* Mismo truco que antes: cuadro del color del texto y letras del color del fondo, así se invierte con el tema */
+  .tile {
+    fill: var(--fg);
+  }
+
+  .letters {
+    fill: var(--bg);
+  }
+
+  .cursor {
+    fill: var(--orange);
+    animation: cursor-blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes cursor-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
+  }
+</style>
