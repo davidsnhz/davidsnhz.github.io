@@ -13,7 +13,7 @@ Mi portafolio. Está en https://davidsnhz.github.io (español) y https://davidsn
 
 ## Desarrollo
 
-Requiere Node 22.23 o superior.
+Hace falta Node 22.23 o más (lo pone en `engines` del package.json).
 
 ```bash
 npm install
