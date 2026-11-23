@@ -1,7 +1,6 @@
 # davidsnhz.github.io
 
-Portafolio personal de David Sánchez, estudiante de 3º de Ingeniería Informática en la UEMC.
-Publicado en **https://davidsnhz.github.io** (español) y **https://davidsnhz.github.io/en/** (inglés).
+Mi portafolio. Está en https://davidsnhz.github.io (español) y https://davidsnhz.github.io/en/ (inglés).
 
 ## Stack
 
@@ -44,7 +43,7 @@ src/
 
 ## Añadir un proyecto
 
-Sin tocar ningún componente:
+No hace falta tocar ningún componente:
 
 1. Copia las capturas a `src/assets/projects/`.
 2. Crea `src/content/projects/es/<slug>.md` y `src/content/projects/en/<slug>.md` con el mismo `<slug>`:
@@ -86,4 +85,4 @@ En **Settings → Pages**, la opción *Source* tiene que estar en **GitHub Actio
 
 ## Pendiente
 
-- Añadir la URL de LinkedIn en `src/config/site.ts`. Mientras esté vacía, no aparece en la sección de contacto.
+- Poner el LinkedIn en `src/config/site.ts` (mientras esté vacío no sale en contacto).
